@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Controle Financeiro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Controle Financeiro Pessoal</h1>
+
+<h2>Adicionar movimentação</h2>
+
+<input type="text" id="descricao" placeholder="Descrição">
+
+<input type="number" id="valor" placeholder="Valor">
+
+<select id="tipo">
+<option value="entrada">Entrada</option>
+<option value="saida">Saída</option>
+</select>
+
+<button onclick="adicionar()">Adicionar</button>
+
+<h2>Saldo</h2>
+
+<p id="saldo">R$ 0</p>
+
+<h2>Movimentações</h2>
+
+<table border="1">
+
+<thead>
+<tr>
+<th>Descrição</th>
+<th>Valor</th>
+<th>Tipo</th>
+</tr>
+</thead>
+
+<tbody id="tabela"></tbody>
+
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
