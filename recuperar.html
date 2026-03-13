@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Recuperar senha</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Recuperar senha</h2>
+
+<p>Digite seu email para recuperar a senha</p>
+
+<input type="email" placeholder="Digite seu email">
+
+<br><br>
+
+<button onclick="recuperarSenha()">Enviar</button>
+
+<p id="mensagem"></p>
+
+<script>
+
+function recuperarSenha(){
+
+document.getElementById("mensagem").innerText =
+"Se o email existir no sistema, você receberá instruções para recuperar a senha.";
+
+}
+
+</script>
+
+</body>
+</html>
