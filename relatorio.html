@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Relatório Financeiro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Relatório Financeiro</h2>
+
+<div>
+
+<p><strong>Total de Receitas:</strong> R$ <span id="totalReceitas">0</span></p>
+
+<p><strong>Total de Despesas:</strong> R$ <span id="totalDespesas">0</span></p>
+
+<p><strong>Saldo:</strong> R$ <span id="saldo">0</span></p>
+
+</div>
+
+<button onclick="calcular()">Atualizar Relatório</button>
+<button onclick="window.location.href='menu.html'">Voltar ao Menu</button>
+
+<script>
+
+function calcular(){
+
+let receitas = 1000; 
+let despesas = 400;
+
+let saldo = receitas - despesas;
+
+document.getElementById("totalReceitas").innerText = receitas;
+document.getElementById("totalDespesas").innerText = despesas;
+document.getElementById("saldo").innerText = saldo;
+
+}
+
+</script>
+
+</body>
+</html>
