@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar Despesa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Cadastrar Despesa</h2>
+
+<form id="formDespesa">
+
+<label>Descrição:</label><br>
+<input type="text" id="descricao" required><br><br>
+
+<label>Categoria:</label><br>
+<select id="categoria">
+<option>Alimentação</option>
+<option>Transporte</option>
+<option>Moradia</option>
+<option>Lazer</option>
+<option>Outros</option>
+</select><br><br>
+
+<label>Valor:</label><br>
+<input type="number" id="valor" required><br><br>
+
+<label>Data:</label><br>
+<input type="date" id="data" required><br><br>
+
+<button type="submit">Salvar Despesa</button>
+
+<button onclick="window.location.href='menu.html'">Voltar ao Menu</button>
+
+</form>
+
+<h3>Lista de Despesas</h3>
+
+<table border="1">
+<thead>
+<tr>
+<th>Descrição</th>
+<th>Categoria</th>
+<th>Valor</th>
+<th>Data</th>
+</tr>
+</thead>
+
+<tbody id="tabelaDespesas"></tbody>
+
+</table>
+
+<script>
+
+document.getElementById("formDespesa").addEventListener("submit", function(event){
+
+event.preventDefault();
+
+let descricao = document.getElementById("descricao").value;
+let categoria = document.getElementById("categoria").value;
+let valor = document.getElementById("valor").value;
+let data = document.getElementById("data").value;
+
+let tabela = document.getElementById("tabelaDespesas");
+
+let linha = tabela.insertRow();
+
+linha.insertCell(0).innerText = descricao;
+linha.insertCell(1).innerText = categoria;
+linha.insertCell(2).innerText = "R$ " + valor;
+linha.insertCell(3).innerText = data;
+
+document.getElementById("formDespesa").reset();
+
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>

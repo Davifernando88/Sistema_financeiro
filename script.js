@@ -65,7 +65,7 @@ let senha = document.getElementById("senha").value;
 
 if(usuario === "admin" && senha === "1234"){
     
-    window.location.href = "index.html";
+    window.location.href = "despesas.html";
 
 }else{
 
