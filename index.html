@@ -1,54 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Controle Financeiro</title>
+<title>Cadastrar Despesa</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Controle Financeiro Pessoal</h1>
+<h2>Cadastrar Despesa</h2>
 
-<h2>Adicionar movimentação</h2>
+<form id="formDespesa">
 
-<input type="text" id="descricao" placeholder="Descrição">
+<label>Descrição:</label><br>
+<input type="text" id="descricao" required><br><br>
 
-<input type="number" id="valor" placeholder="Valor">
+<label>Categoria:</label><br>
+<select id="categoria">
+<option>Alimentação</option>
+<option>Transporte</option>
+<option>Moradia</option>
+<option>Lazer</option>
+<option>Outros</option>
+</select><br><br>
 
-<select id="tipo">
-<option value="entrada">Entrada</option>
-<option value="saida">Saída</option>
-</select>
+<label>Valor:</label><br>
+<input type="number" id="valor" required><br><br>
 
-<button onclick="adicionar()">Adicionar</button>
+<label>Data:</label><br>
+<input type="date" id="data" required><br><br>
 
-<h2>Saldo</h2>
+<button type="submit">Salvar Despesa</button>
 
-<p id="saldo">R$ 0</p>
+</form>
 
-<h2>Movimentações</h2>
+<h3>Lista de Despesas</h3>
 
 <table border="1">
-
 <thead>
 <tr>
 <th>Descrição</th>
+<th>Categoria</th>
 <th>Valor</th>
-<th>Tipo</th>
+<th>Data</th>
 </tr>
 </thead>
 
-<tbody id="tabela"></tbody>
+<tbody id="tabelaDespesas"></tbody>
 
 </table>
 
-<script src="script.js"></script>
 <script>
-window.location.href = "login.html";
+
+document.getElementById("formDespesa").addEventListener("submit", function(event){
+
+event.preventDefault();
+
+let descricao = document.getElementById("descricao").value;
+let categoria = document.getElementById("categoria").value;
+let valor = document.getElementById("valor").value;
+let data = document.getElementById("data").value;
+
+let tabela = document.getElementById("tabelaDespesas");
+
+let linha = tabela.insertRow();
+
+linha.insertCell(0).innerText = descricao;
+linha.insertCell(1).innerText = categoria;
+linha.insertCell(2).innerText = "R$ " + valor;
+linha.insertCell(3).innerText = data;
+
+document.getElementById("formDespesa").reset();
+
+});
+
 </script>
 
 </body>
 </html>
-
